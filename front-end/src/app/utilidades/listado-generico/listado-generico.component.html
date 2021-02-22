@@ -1,0 +1,29 @@
+<!-- operador pipe para cambiar la manera q se muestran los datos | uppercase por ej -->
+<div *ngIf="!listado">
+    <span #cargando>
+      <ng-content select="[cargando]"></ng-content>
+    </span>
+    <!-- si no se manda ningun loading gif, se usa este por defecto -->
+    <span *ngIf="!cargando.innerHTML.trim()">
+      <img src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif">
+    </span>
+  </div>
+  
+  <div *ngIf="listado?.length===0">
+      <span #vacio>
+        <ng-content select="[vacio]"></ng-content>
+      </span>
+      <!-- si no se envia ningun mensaje, se usa este por defecto -->
+      <span *ngIf="!vacio.innerHTML.trim()">
+        <p>No hay peliculas para mostrar</p>
+      </span>
+      
+
+  </div>
+  
+  <!-- el ng-container no se coloca en el html final en el navegador-->
+  <ng-container *ngIf="listado && listado.length > 0">
+
+    <!-- "[contenido]" es como vamos a identificar el ng-content con el ng-container -->
+    <ng-content select="[contenido]"></ng-content>
+  </ng-container>

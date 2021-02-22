@@ -1,0 +1,31 @@
+<app-listado-generico [listado]="peliculas">
+  
+    <!-- <ng-container cargando>
+        <img src="https://www.gifde.com/js_pics_aux/descarga.php?descarga=si&c=gif/otros/decoracion/cargando-loading/&f=cargando-loading-048.gif">
+    </ng-container>
+    <ng-container vacio>
+        <div>Mensaje personalizado: <b>vacio</b></div>
+    </ng-container> -->
+    <ng-container contenido>
+      <div class="peliculas-contenedor">
+        <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
+          <a>
+            <img [src]="pelicula.poster" alt="Poster">
+          </a>
+          <p>
+            <a>{{pelicula.titulo}}</a>
+          </p>
+          <div>
+            <a mat-flat-button color="primary">
+              Editar
+            </a>
+            <button mat-flat-button color="warn" type="button">
+              Borrar
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+
+</app-listado-generico>

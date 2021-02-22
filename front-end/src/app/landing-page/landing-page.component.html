@@ -1,0 +1,7 @@
+<!-- <app-rating [maximoRating]="6" (rated)="manejarVoto($event)"></app-rating> -->
+<h2>En cine</h2>
+<h2>Datos de la pelicula en cines</h2>
+<!-- [] se llama binding de atributo y se puede pasar expresiones de javascript o elementos html, en este caso se le esta pasando una propiedad -->
+<app-listado-peliculas [peliculas]="peliculasEnCine"></app-listado-peliculas>
+<h2>Datos de proximos estrenos</h2>
+<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
